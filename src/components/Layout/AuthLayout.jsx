@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Logo from "../Elements/Logo/Index";
+import Logo from "../Elements/Logo";
 
 const AuthLayout = (props) => {
   const { children, type } = props; // Ambil type dari props
