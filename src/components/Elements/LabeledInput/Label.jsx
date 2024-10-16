@@ -1,21 +1,19 @@
-const Label = () => {
-  return (
-    <>
-    
+import PropTypes from 'prop-types';
 
-<label htmlFor="password" className="block text-sm mb-2">
-                Password
-              </label> 
-              
-              <input type="password" 
-    className="py-3 ps-4 text-sm border rounded-md w-full bg-special-mainBg border-gray-03 text-gray-01 focus:border-black focus:outline-none focus:ring-0"
-    placeholder="**************"
-    name="password"
-    id="password"
-    />
-              </>
-  )
-}
+const Label = (props) => {
+  const { htmlFor, children } = props;
+
+  return (
+    <label htmlFor={htmlFor} className="block text-sm mb-2">
+      {children}
+    </label>
+  );
+};
+
+// Define prop types
+Label.propTypes = {
+  htmlFor: PropTypes.string.isRequired, // htmlFor is required
+  children: PropTypes.node.isRequired, // children is required
+};
 
 export default Label;
-
