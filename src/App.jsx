@@ -1,8 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SignInPage from "./Pages/signIn";
-import SignUpPage from "./Pages/signUp";
 import ErrorRoute from "./Pages/errorRoute";
-import ForgotPassword from "./Pages/forgotPassword";
+import ForgotPassword from "./Pages/ForgotPassword";
+import SignInPage from "./Pages/SignIn";
+import SignUpPage from "./Pages/SignUp";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+
 
 const App = () => {
   const myRouter = createBrowserRouter([
