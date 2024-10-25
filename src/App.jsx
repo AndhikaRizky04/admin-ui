@@ -1,7 +1,10 @@
+import BalancePage from "./Pages/balance";
+import DashboardPage from "./Pages/dashboard";
 import ErrorRoute from "./Pages/errorRoute";
 import ForgotPassword from "./Pages/ForgotPassword";
 import SignInPage from "./Pages/SignIn";
 import SignUpPage from "./Pages/SignUp";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
@@ -10,12 +13,10 @@ const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <div>Halaman Utama</div>,
+      element: <DashboardPage/>,
+      errorElement: <ErrorRoute/>,
     },
-    {
-      path: "/eror",
-      element: <ErrorRoute/>
-    },
+     
     {
       path: "/login",
       element: <SignInPage/>
@@ -27,6 +28,10 @@ const App = () => {
     {
       path: "/forgot-password",
       element: <ForgotPassword/>
+    },
+    {
+      path: "/balance",
+      element: <BalancePage/>
     }
   ]);
 
