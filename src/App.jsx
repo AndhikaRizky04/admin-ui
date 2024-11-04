@@ -1,3 +1,4 @@
+import ExpenccesPage from "./Pages/expencces";
 import BalancePage from "./Pages/balance";
 import DashboardPage from "./Pages/dashboard";
 import ErrorRoute from "./Pages/errorRoute";
@@ -32,6 +33,10 @@ const App = () => {
     {
       path: "/balance",
       element: <BalancePage/>
+    },
+    {
+      path: "/expense",
+      element: <ExpenccesPage/>
     }
   ]);
 
