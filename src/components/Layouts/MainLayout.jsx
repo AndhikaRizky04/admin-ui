@@ -1,17 +1,17 @@
-import Header from '../Fragments/Header';
-import Navbar from '../Fragments/Navbar';
-import PropTypes from 'prop-types';
+import Header from "../Fragments/Header";
+import Navbar from "../Fragments/Navbar";
 
 const MainLayout = (props) => {
   const { children } = props;
+
   return (
     <div className="flex bg-special-mainBg w-screen min-h-screen max-w-full">
       {/* navbar start*/}
-      <Navbar/>
+      <Navbar />
       {/* navbar end*/}
       <div className="w-screen">
         {/* header start*/}
-        <Header/>
+        <Header />
         {/* header end*/}
         {/* content start*/}
         <main className="px-6 py-4">{children}</main>
@@ -20,9 +20,5 @@ const MainLayout = (props) => {
     </div>
   );
 };
-
-MainLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}; //memvalidasi tipe prop yang diterima oleh komponen MainLayout.
 
 export default MainLayout;

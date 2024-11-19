@@ -1,43 +1,63 @@
-import ExpenccesPage from "./Pages/expencces";
-import BalancePage from "./Pages/balance";
-import DashboardPage from "./Pages/dashboard";
-import ErrorRoute from "./Pages/errorRoute";
-import ForgotPassword from "./Pages/ForgotPassword";
-import SignInPage from "./Pages/SignIn";
-import SignUpPage from "./Pages/SignUp";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-
+import SignInPage from "./Pages/signIn";
+import SignUpPage from "./Pages/signUp";
+import ErrorRoute from "./Pages/errorRoute";
+import ForgetPassword from "./Pages/forgetpassword";
+import DashboardPage from "./Pages/dashboard";
+import BalancePage from "./Pages/balance";
+import ExpensesPage from "./Pages/expenses";
+import GoalPage from "./Pages/goal";
 
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <DashboardPage/>,
-      errorElement: <ErrorRoute/>,
+      element: <DashboardPage />,
     },
-     
+    {
+      path: "/eror",
+      element: <ErrorRoute />,
+    },
     {
       path: "/login",
-      element: <SignInPage/>
+      element: <SignInPage />,
     },
     {
       path: "/register",
-      element: <SignUpPage/>
+      element: <SignUpPage />,
     },
     {
-      path: "/forgot-password",
-      element: <ForgotPassword/>
+      path: "/forgetpassword",
+      element: <ForgetPassword />,
     },
     {
       path: "/balance",
-      element: <BalancePage/>
+      element: <BalancePage />,
     },
     {
-      path: "/expense",
-      element: <ExpenccesPage/>
-    }
+      path: "/bills",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/transaction",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/expenses",
+      element: <ExpensesPage />,
+    },
+    {
+      path: "/goals",
+      element: <GoalPage />,
+    },
+    {
+      path: "/settings",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/logout",
+      element: <SignInPage />,
+    },
   ]);
 
   return (

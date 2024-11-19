@@ -6,13 +6,15 @@ const Card = (props) => {
   return (
     <div className={`flex flex-col flex-1 mb-6 ${variant}`}>
       {title && (
-        title.length === 1 ? (
-          <div className="hidden md:block md:text-lg md:text-gray-02 md:mb-4">
-            {title}
-          </div>
-        ) : (
-          <div className="text-lg text-gray-02 mb-4">{title}</div>
-        )
+        <>
+          {title.length === 1 ? (
+            <div className="hidden md:block md:text-lg md:text-gray-02 md:mb-4">
+              {title}
+            </div>
+          ) : (
+            <div className="text-lg text-gray-02 mb-4">{title}</div>
+          )}
+        </>
       )}
       <div className="bg-white rounded-lg px-6 py-5 shadow-xl flex-1">
         {desc}
@@ -21,17 +23,14 @@ const Card = (props) => {
   );
 };
 
-// Tambahkan propTypes untuk validasi properti
+// Menambahkan propTypes
 Card.propTypes = {
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.bool,
-  ]),
-  desc: PropTypes.string.isRequired,
-  variant: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  desc: PropTypes.node.isRequired, // `desc` wajib diisi dan bisa berupa node (teks, elemen, dll.)
+  variant: PropTypes.string, // Bisa berupa string
 };
 
-// Tambahkan defaultProps untuk nilai default properti opsional
+// Menambahkan defaultProps untuk props opsional
 Card.defaultProps = {
   title: false,
   variant: '',

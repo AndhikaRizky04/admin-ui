@@ -1,5 +1,6 @@
-import Button from "../Elements/Button/index";
-import LabeledInput from '../Elements/LabeledInput/Index'; 
+import { Link } from "react-router-dom";
+import Button from "../Elements/Button";
+import LabeledInput from "../Elements/LabeledInput";
 
 const FormSignUp = () => {
   return (
@@ -28,9 +29,11 @@ const FormSignUp = () => {
           name="password"
         />
       </div>
-      <Button variant="bg-primary w-full text-white" type="submit">
-        Sign Up
-      </Button>
+      <Link to="/">
+        <Button variant="bg-primary w-full text-white" type="submit">
+          Sign Up
+        </Button>
+      </Link>
     </form>
   );
 };

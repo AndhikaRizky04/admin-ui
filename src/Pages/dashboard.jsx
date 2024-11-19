@@ -1,5 +1,5 @@
-import Card from "../components/Elements/Card/index";
-import MainLayout from "../components/Layout/MainLayout";
+import Card from "../Components/Elements/Card/index";
+import MainLayout from "../Components/Layouts/MainLayout";
 
 const DashboardPage = () => {
   return (
@@ -7,25 +7,18 @@ const DashboardPage = () => {
       {/* top content start*/}
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
         <Card title="Total Balance" />
-        <Card 
-          title="Goals" 
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, nesciunt quaerat! Adipisci deleniti modi autem quasi eaque id, sequi sunt eligendi, recusandae deserunt, neque maxime qui et quidem labore minus!"
-          />
-        <Card title="Upcoming Bill" /> 
-        </div>
-        {/*top content end */}
-        {/* buttom content start */}
-      <div className="md:grid md:grid-cols-3 md:gap-x-6">
-        <div className="md:col-span-1">
-          <Card
-           title="Recent Transaction"
-           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, nesciunt quaerat! Adipisci deleniti modi autem quasi eaque id, sequi sunt eligendi, recusandae deserunt," 
-           />
-        </div>
-        <div className="md:col-span-2 flex flex-col flex-1">
-          <Card title="Statistics" />
-          <Card title="Expenses Breakdown" />
-        </div>
+        <Card
+          title="Goals"
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolore sapiente suscipit nam, vel officia ipsam praesentium earum unde provident nisi corrupti sit? Officia minima maxime magni quaerat id exercitationem."
+        />
+        <Card title="Upcoming Bill" />
+        <Card
+          variant="md:col-span-1 md:row-span-2"
+          title="Recent Transaction"
+          desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic at ab, voluptates doloribus voluptatum vitae similique perspiciatis sint doloremque consequatur nisi, ut assumenda reprehenderit beatae tempore deleniti quo odit iusto.. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic at ab, voluptates doloribus voluptatum vitae similique perspiciatis sint doloremque consequatur nisi, ut assumenda reprehenderit beatae tempore deleniti quo odit iusto."
+        />
+        <Card variant="md:col-span-2" title="Statistics" />
+        <Card variant="md:col-span-2" title="Expenses Breakdown" />
       </div>
       {/* bottom content end*/}
     </MainLayout>
