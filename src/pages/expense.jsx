@@ -1,5 +1,5 @@
 
-import Card from "../components/Elements/Card/index";
+import Card from "../components/Elements/Card";
 import MainLayout from "../components/Layouts/MainLayout";
 
 const ExpensePage = () => {
