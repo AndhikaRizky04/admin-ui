@@ -1,4 +1,4 @@
-import { Icon } from '../components/Elements/Icon';
+import { Icon } from '../components/Elements/Icon/index';
 
 
 export const expensesBreakdowns = [
