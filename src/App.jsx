@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SignInPage from "./Pages/signIn";
-import SignUpPage from "./Pages/signUp";
+import SignInPage from "./Pages/signIn.jsx";
+import SignUpPage from "./Pages/signUp.jsx";
 import ErrorRoute from "./Pages/errorRoute";
-import ForgetPassword from "./Pages/forgetpassword";
-import DashboardPage from "./Pages/dashboard";
-import BalancePage from "./Pages/balance";
-import ExpensesPage from "./Pages/expenses";
-import GoalPage from "./Pages/goal";
+import ForgetPassword from "./Pages/forgetpassword.jsx";
+import DashboardPage from "./Pages/dashboard.jsx";
+import BalancePage from "./Pages/balance.jsx";
+import ExpensesPage from "./Pages/expenses.jsx";
+import GoalPage from "./Pages/goal.jsx";
 
 const App = () => {
   const myRouter = createBrowserRouter([
