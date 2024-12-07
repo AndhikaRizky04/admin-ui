@@ -1,4 +1,4 @@
-import FormForgotPassword from '../components/Fragments/FormForgotPassword';
+import FormForgotPassword from '../components/Fragments/formForgotPassword';
 
 
 
