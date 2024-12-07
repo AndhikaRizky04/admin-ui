@@ -1,49 +1,63 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SignInPage from "./pages/signIn";
-import SignUpPage from "./pages/signUp";
-import ErrorRoute from "./pages/errorRoute";
-import ForgotPassword from "./pages/forgotPassword";
-import DashboardPage from "./pages/dashboard";
-import BalancePage from "./pages/balance";
-import ExpensePage from "./pages/expense";
-import GoalPage from "./pages/goal";
+import SignInPage from "./Pages/signIn";
+import SignUpPage from "./Pages/signUp";
+import ErrorRoute from "./Pages/errorRoute";
+import ForgetPassword from "./Pages/forgetpassword";
+import DashboardPage from "./Pages/dashboard";
+import BalancePage from "./Pages/balance";
+import ExpensesPage from "./Pages/expenses";
+import GoalPage from "./Pages/goal";
 
 const App = () => {
   const myRouter = createBrowserRouter([
     {
       path: "/",
-      element: <DashboardPage/>,
-      errorElement: <ErrorRoute/>,
+      element: <DashboardPage />,
     },
     {
       path: "/eror",
-      element: <ErrorRoute/>
+      element: <ErrorRoute />,
     },
     {
       path: "/login",
-      element: <SignInPage/>
+      element: <SignInPage />,
     },
     {
       path: "/register",
-      element: <SignUpPage/>
+      element: <SignUpPage />,
     },
     {
-      path: "/forgot-password",
-      element: <ForgotPassword/>
+      path: "/forgetpassword",
+      element: <ForgetPassword />,
     },
     {
       path: "/balance",
-      element: <BalancePage/>
+      element: <BalancePage />,
     },
     {
-      path: "/expense",
-      element: <ExpensePage/>
+      path: "/bills",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/transaction",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/expenses",
+      element: <ExpensesPage />,
     },
     {
       path: "/goals",
-      element: <GoalPage/>
-    }
-
+      element: <GoalPage />,
+    },
+    {
+      path: "/settings",
+      element: <ErrorRoute />,
+    },
+    {
+      path: "/logout",
+      element: <SignInPage />,
+    },
   ]);
 
   return (

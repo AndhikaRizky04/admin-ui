@@ -1,13 +1,12 @@
-import React from 'react'
-import Button from "../Elements/Button";
-import CheckBox from "../Elements/CheckBox";
 import LabeledInput from "../Elements/LabeledInput";
+import Button from "../Elements/Button";
+import Logo from "../Elements/Logo/index";
 import { Link } from 'react-router-dom'
-import Logo from '../Elements/Logo/index'
 
-const FormForgotPassword = () => {
-  return (
-    <div className="flex justify-center items-center min-h-screen ">
+const FormForgetPassword = () => {
+    return (
+      
+           <div className="flex justify-center items-center min-h-screen ">
         <div className=" p-8 rounded-lg max-w-md w-full">
             <Logo />
             <h2 className="text-xl font-bold text-center mt-6">Forgot Password?</h2>
@@ -30,13 +29,15 @@ const FormForgotPassword = () => {
             </form>
 
             <div className="text-center mt-6 font-semibold">
-            <Link to="/login" className="text-gray-500 text-sm hover:underline">
+            <Link to="/login" className="text-gray-500 text-sm ">
                 Back to login
             </Link>
+            
             </div>
         </div>
     </div>
-  )
-}
-
-export default FormForgotPassword
+      
+    );
+  };
+  
+  export default FormForgetPassword;

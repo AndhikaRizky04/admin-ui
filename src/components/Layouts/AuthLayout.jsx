@@ -1,8 +1,9 @@
 
-import SignInPage from '../../pages/signIn'
+import SignInPage from '../../Pages/signIn'
 import Logo from '../Elements/Logo/index'
 import FormSignIn from '../Fragments/FormSignIn'
 import { Link } from 'react-router-dom'
+
 
 const AuthLayout = (props) => {
   const {children,type} = props;
@@ -18,14 +19,15 @@ const AuthLayout = (props) => {
       {/* teks start */}
       <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
         <div className="border border-gray-05 w-full"></div>
-        <div className="px-2 bg-special-mainBg absolute"> or sign in with</div>
+        <div class="px-2 bg-special-mainBg absolute"> or sign in with</div>
       </div>
       {/* teks end */}
       {/* sign in with google start */}
       <div className="mb-8">
-        <a href=''
+        <a href='https://www.facebook.com/?locale2=id_ID&_rdr'
             target="_blank"
             rel="noopener noreferrer"
+        
         >
 
         <button
@@ -34,9 +36,9 @@ const AuthLayout = (props) => {
           
         >
           <svg
-            className="h-6 w-6 mr-2"
+            class="h-6 w-6 mr-2"
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
             width="800px"
             height="800px"
             viewBox="-0.5 0 48 48"
@@ -48,9 +50,9 @@ const AuthLayout = (props) => {
             <g
               id="Icons"
               stroke="none"
-              strokeWidth="1"
+              stroke-width="1"
               fill="none"
-              fillRule="evenodd"
+              fill-rule="evenodd"
             >
               {" "}
               <g id="Color-" transform="translate(-401.000000, -860.000000)">
@@ -95,7 +97,7 @@ const AuthLayout = (props) => {
       </div>
       {/* sign in with google end */}
      {/* link start */}
-<div className="flex justify-center">
+<div className="flex flex-col items-center">
   {type == "sign up" ? (
     <>
       <span className="text-sm text-gray-03">
@@ -104,9 +106,13 @@ const AuthLayout = (props) => {
       <Link to = "/login" className="text-primary text-sm font-bold">Sign In Here</Link>
     </>
   ) : (
+    <>
     <Link to = "/register" className="text-primary text-sm font-bold">Create an account</Link>
+    <Link to="/forgetpassword" className="text-gray-03 text-sm font-bold mt-2">Forget Password?</Link>
+    </>
   )}
 </div>
+
 {/* link end */}
     </div>
     {/* container end */}

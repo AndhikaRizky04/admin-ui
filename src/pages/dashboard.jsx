@@ -1,25 +1,28 @@
-import { useState } from "react";
-import Card from "../components/Elements/Card";
-import { Icon } from '../components/Elements/Icon';
-import MainLayout from "../components/Layouts/MainLayout";
+import Card from "../Components/Elements/Card/index";
+import MainLayout from "../Components/Layouts/MainLayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transaction";
+import { Icon } from "../Components/Elements/Icon";
+import { useState } from "react";
+import CardBalance from "../Components/Fragments/Dashboard/CardBalance";
 
 const DashboardPage = () => {
   const tabs = ["All", "Revenue", "Expense"];
 
   const [trxs, setTrx] = useState(transactions);
+  //membuat tombol aktif dengan teks akan berubah warna menggunakan useState dan untuk mengaktifkannya ada di bawah dengan menggunakannya di button
   const [activeTab, setActiveTab] = useState("All");
 
   function handleClick(e) {
-    const transactionFiltered =
-    e.target.value != "All"
-      ? transactions.filter(({ type }) => type == e.target.value)
-      : transactions;
+    //setActiveTab(e.target.value); // untuk membuat fitur one klik
+    const transactionFiltered = // membuat one klik dengan memfilter bagian yang ada
+      e.target.value != "All"
+        ? transactions.filter(({ type }) => type == e.target.value)
+        : transactions;
 
-      setActiveTab(e.target.value);
-      setTrx(transactionFiltered);
+    setActiveTab(e.target.value);
+    setTrx(transactionFiltered);
   }
 
   const billCard = bills.map((bill) => (
@@ -40,6 +43,30 @@ const DashboardPage = () => {
         <span className="p-2 border rounded-lg font-bold text-center">
           ${bill.amount}
         </span>
+      </div>
+    </div>
+  ));
+
+  const expenseCard = expensesBreakdowns.map((expensesBreakdown) => (
+    <div key={expensesBreakdown.id} className="flex pb-4 justify-between">
+      <div className="flex">
+        <div className="bg-special-bg px-3 rounded-lg flex flex-col place-content-center">
+          {expensesBreakdown.icon}
+        </div>
+        <div className="ms-4">
+          <span className="text-gray-02">{expensesBreakdown.category}</span>
+          <br />
+          <span className="font-bold text-lg">${expensesBreakdown.amount}</span>
+          <div className="flex">
+            <span className="text-gray-02">
+              {expensesBreakdown.percentage}%*
+            </span>{" "}
+            {expensesBreakdown.arrow}
+          </div>
+        </div>
+      </div>
+      <div className="flex place-content-center flex-col me-8">
+        <Icon.ArrowKanan />
       </div>
     </div>
   ));
@@ -67,73 +94,50 @@ const DashboardPage = () => {
       </div>
     </div>
   ));
-
-  const expenseCard = expensesBreakdowns.map((expensesBreakdown) => (
-    <div key={expensesBreakdown.id} className="flex pb-4 justify-between">
-      <div className="flex">
-        <div className="bg-special-bg px-3 rounded-lg flex flex-col place-content-center">
-          {expensesBreakdown.icon}
-        </div>
-        <div className="ms-4">
-          <span className="text-gray-02">{expensesBreakdown.category}</span>
-          <br />
-          <span className="font-bold text-lg">${expensesBreakdown.amount}</span>
-          <div className="flex">
-            <span className="text-gray-02">
-              {expensesBreakdown.percentage}%*
-            </span>{" "}
-            {expensesBreakdown.arrow}
-          </div>
-        </div>
-      </div>
-      <div className="flex place-content-center flex-col me-8">
-        <Icon.ArrowRight />
-      </div>
-    </div>
-  ));
-
   return (
-  <MainLayout type="dashboard">
-  {/* top content start*/}
-  <div className="md:grid md:grid-cols-3 md:gap-x-6">
-    <Card title="Total Balance" />
-    <Card title="Goals" />
-    <Card title="Upcoming Bill" desc={billCard} />
-    <Card
-      variant="md:col-span-1 md:row-span-2"
-      title="Recent Transaction"
-      desc={
-        <div>
-          <div className="mb-4">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={
-                  activeTab == tab
-                    ? "px-4 font-bold border-b-4 border-primary text-primary"
-                    : "px-4 font-bold text-gray-01" 
-                }
-                value={tab}
-                onClick={handleClick}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-          {transactionCard}
-        </div>
-      }
-    />
-
-    <Card variant="md:col-span-2" title="Statistics" />
-    <Card
-      variant="md:col-span-2" 
-      title="Expenses Breakdown"
-      desc={<div className="lg:grid lg:grid-cols-3">{expenseCard}</div>}
-    />
-  </div>
-  {/* buttom content end */}
-  </MainLayout>
+    <MainLayout type="dashboard">
+      {/* top content start*/}
+      <div className="md:grid md:grid-cols-3 md:gap-x-6">
+        <CardBalance />
+        <Card
+          title="Goals"
+          desc="kon ipsum dolor sit amet consectetur adipisicing elit. Ullam dolore sapiente suscipit nam, vel officia ipsam praesentium earum unde provident nisi corrupti sit? Officia minima maxime magni quaerat id exercitationem."
+        />
+        <Card title="Upcoming Bill" desc={billCard} />
+        <Card
+          variant="md:col-span-1 md:row-span-2"
+          title="Recent Transaction"
+          desc={
+            <div>
+              <div className="mb-4">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    className={
+                      activeTab == tab // SETELAH ITU UBAH PADA BUTTON-NYA
+                        ? "px-4 font-bold border-b-4 border-primary text-primary"
+                        : "px-4 font-bold text-gray-01"
+                    }
+                    value={tab}
+                    onClick={handleClick}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+              {transactionCard}
+            </div>
+          }
+        />
+        <Card variant="md:col-span-2" title="Statistics" />
+        <Card
+          variant="md:col-span-2"
+          title="Expenses Breakdown"
+          desc={<div className="lg:grid lg:grid-cols-3">{expenseCard}</div>}
+        />
+      </div>
+      {/* bottom content end*/}
+    </MainLayout>
   );
 };
 

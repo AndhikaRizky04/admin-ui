@@ -1,5 +1,5 @@
 import Input from "../Elements/LabeledInput/Input";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import { FaBell } from "react-icons/fa";
 
 const Header = () => {
   const date = new Date().toDateString().slice(4);
@@ -12,7 +12,8 @@ const Header = () => {
       </div>
       <div className="flex">
         <div className="self-center">
-          <NotificationsIcon className="text-gray-01 scale-110" />
+          <FaBell className="text-gray-01 scale-110" />{" "}
+          {/* Menggunakan icon dari react-icons */}
         </div>
         <div className="ms-10 hidden sm:block">
           <Input variant="bg-white w-80" />

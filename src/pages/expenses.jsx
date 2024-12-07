@@ -1,28 +1,28 @@
-import Card from "../Components/Elements/Card/index";
 import MainLayout from "../Components/Layouts/MainLayout";
 
-const GoalPage = () => {
+import Card from "../Components/Elements/Card/index";
+
+const ExpensesPage = () => {
   return (
-    <MainLayout type="goal">
+    <MainLayout type="expense">
       <div className="md:grid md:grid-cols-3 md:gap-x-6">
-        <Card title="Goals" variant="col-span-1" />
         <Card
-          variant="md:col-span-2"
+          title="Expenses Comparison"
+          variant="md:col-span-3"
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum."
+        />
+        <Card title="Expenses Breakdown" />
+        <Card
           title="&nbsp;"
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum."
         />
-        <Card title="Expenses Goals by Category" />
         <Card title="&nbsp;" />
-        <Card
-          title="&nbsp;"
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum."
-        />
         <Card />
-        <Card desc="Lorem. ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
         <Card />
+        <Card desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque quam alias enim ullam deserunt ducimus consequatur cumque hic voluptatem totam ab quibusdam facilis distinctio ratione, sequi vel porro eum." />
       </div>
     </MainLayout>
   );
 };
 
-export default GoalPage;
+export default ExpensesPage;
