@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Elements/Card";
-import { Icon } from '../components/Elements/Icon/';
+import { Icon } from '../components/Elements/Icon';
 import MainLayout from "../components/Layouts/MainLayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
