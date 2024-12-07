@@ -26,7 +26,6 @@ const AuthLayout = (props) => {
         <a href=''
             target="_blank"
             rel="noopener noreferrer"
-        
         >
 
         <button

@@ -24,34 +24,43 @@ const Stepper = (props) => {
 
     return (
         <>
-        <div>{desc[activeStep]}</div>
-        <MobileStepper
-            variant="dots"
-            steps={dataNum}
-            position="static"
-            activeStep={activeStep}
-            sx={{ maxWidth: 400, flexGrow: 1 }}
-            nextButton={
-                <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-                    Next
-                    {theme.direction === 'rtl' ? (
-                        <KeyboardArrowLeft />
-                    ) : (
-                        <KeyboardArrowRight />
-                    )}
-                </Button>
-            }
-            backButton={
-                <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                    {theme.direction === 'rtl' ? (
-                        <KeyboardArrowRight />
-                    ) : (
-                        <KeyboardArrowLeft />
-                    )}
-                    Back
-                </Button>
-            }
-        />
+            <div>{desc[activeStep]}</div>
+            <MobileStepper
+                variant="dots"
+                steps={dataNum}
+                position="static"
+                activeStep={activeStep}
+                sx={{
+                    maxWidth: "100%",
+                    flexGrow: 1,
+                    "& .MuiMobileStepper-dot" : {
+                        backgroundColor: "darkgray",
+                    },
+                    "& .MuiMobileStepper-dotActive" : {
+                        backgroundColor: "#299D91",
+                    },
+                 }}
+                nextButton={
+                    <Button size="small" onClick={handleNext} sx={{ color: "black", fontWeight: "bold"}} disabled={activeStep === dataNum - 1}>
+                        Next
+                        {theme.direction === 'rtl' ? (
+                            <KeyboardArrowLeft />
+                        ) : (
+                            <KeyboardArrowRight />
+                        )}
+                    </Button>
+                }
+                backButton={
+                    <Button size="small" onClick={handleBack} sx={{ color: "black", fontWeight: "bold"}} disabled={activeStep === 0}>
+                        {theme.direction === 'rtl' ? (
+                            <KeyboardArrowRight />
+                        ) : (
+                            <KeyboardArrowLeft />
+                        )}
+                        Previous
+                    </Button>
+                }
+            />
         </>
     );
 }

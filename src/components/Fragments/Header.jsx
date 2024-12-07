@@ -1,4 +1,4 @@
-import Input from "../Elements/LabelInput/Input";
+import Input from "../Elements/LabeledInput/Input";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 
 const Header = () => {

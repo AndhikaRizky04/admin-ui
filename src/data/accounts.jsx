@@ -33,7 +33,7 @@ export const accounts = [
       accountType: "Investment",
       accountNumber: "698 456 866 20000",
       balance: 25000,
-      logo: "Visacard.png",
+      logo: "Mastercard.png",
     },
     {
       id: 5,

@@ -1,4 +1,5 @@
-import Card from "../components/Elements/Card/index";
+import React from 'react'
+import Card from "../components/Elements/Card";
 import MainLayout from "../components/Layouts/MainLayout";
 
 const ExpensePage = () => {
