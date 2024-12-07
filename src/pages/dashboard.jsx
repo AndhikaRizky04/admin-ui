@@ -6,6 +6,8 @@ import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transaction";
 import CardBalance from "../components/Fragments/Dashboard/CardBalance";
+import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
+import CardGoal from "../components/Fragments/Dashboard/CardGoal";
 
 const DashboardPage = () => {
   const tabs = ["All", "Revenue", "Expense"];
@@ -98,8 +100,9 @@ const DashboardPage = () => {
   {/* top content start*/}
   <div className="md:grid md:grid-cols-3 md:gap-x-6">
     <CardBalance/>
-    <Card title="Goals" />
+    <CardGoal/>
     <Card title="Upcoming Bill" desc={billCard} />
+    
     <Card
       variant="md:col-span-1 md:row-span-2"
       title="Recent Transaction"
@@ -117,16 +120,17 @@ const DashboardPage = () => {
                 value={tab}
                 onClick={handleClick}
               >
+                
                 {tab}
               </button>
             ))}
           </div>
           {transactionCard}
+         
         </div>
       }
     />
-
-    <Card variant="md:col-span-2" title="Statistics" />
+     <CardStatistic/>
     <Card
       variant="md:col-span-2" 
       title="Expenses Breakdown"
