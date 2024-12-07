@@ -1,9 +1,8 @@
 
-import SignInPage from '../../Pages/signIn'
+import SignInPage from '../../pages/signIn'
 import Logo from '../Elements/Logo/index'
 import FormSignIn from '../Fragments/FormSignIn'
 import { Link } from 'react-router-dom'
-
 
 const AuthLayout = (props) => {
   const {children,type} = props;
@@ -24,7 +23,7 @@ const AuthLayout = (props) => {
       {/* teks end */}
       {/* sign in with google start */}
       <div className="mb-8">
-        <a href='https://www.facebook.com/?locale2=id_ID&_rdr'
+        <a href=''
             target="_blank"
             rel="noopener noreferrer"
         
@@ -97,7 +96,7 @@ const AuthLayout = (props) => {
       </div>
       {/* sign in with google end */}
      {/* link start */}
-<div className="flex flex-col items-center">
+<div className="flex justify-center">
   {type == "sign up" ? (
     <>
       <span className="text-sm text-gray-03">
@@ -106,13 +105,9 @@ const AuthLayout = (props) => {
       <Link to = "/login" className="text-primary text-sm font-bold">Sign In Here</Link>
     </>
   ) : (
-    <>
     <Link to = "/register" className="text-primary text-sm font-bold">Create an account</Link>
-    <Link to="/forgetpassword" className="text-gray-03 text-sm font-bold mt-2">Forget Password?</Link>
-    </>
   )}
 </div>
-
 {/* link end */}
     </div>
     {/* container end */}

@@ -1,7 +1,8 @@
 import Button from "../Elements/Button";
 import CheckBox from "../Elements/CheckBox";
-import LabeledInput from "../Elements/LabeledInput";
-import { Link } from "react-router-dom";
+import LabeledInput from "../Elements/LabelInput";
+import { Link } from 'react-router-dom'
+
 
 const FormSignIn = () => {
   return (
@@ -15,22 +16,26 @@ const FormSignIn = () => {
         />
       </div>
       <div className="mb-6">
-        <LabeledInput
-          label="Password"
-          type="password"
-          placeholder="*************"
-          name="password"
-        />
+      <LabeledInput
+        label="Password"
+        type="password"
+        placeholder="*************"
+        name="password"
+      />
+  
+      <div className="mt-2">
+        <Link to="/forgot-password" className="text-primary text-sm font-medium">
+          Forgot Password?
+        </Link>
       </div>
+    </div>
+      
       <div className="mb-3">
         <CheckBox label="Keep me signed in" name="status" />
       </div>
-      <Link to="/" className="text-white-500 text-sm ">
-        <Button variant="bg-primary w-full text-white" type="submit">
-          Login
-        </Button>
-      </Link>
-      {/* <div className="flex flex-col items-center" ><Link to = "/forgetpassword" className="text-gray-03 text-sm font-bold mt-2">Forgot Password</Link></div>*/}
+      <Button variant="bg-primary w-full text-white" type="submit" >
+	      Login
+      </Button>
     </form>
   );
 };
