@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Card from "@components/Elements/Card";
+import Card from "../components/Elements/Card";
 import { Icon } from '../components/Elements/Icon';
 import MainLayout from "../components/Layouts/MainLayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transaction";
-import CardBalance from "@components/Fragments/Dashboard/CardBalance";
-import CardStatistic from "@components/Fragments/Dashboard/CardStatistic";
-import CardGoal from "@components/Fragments/Dashboard/CardGoal";
+import CardBalance from "../components/Fragments/Dashboard/CardBalance";
+import CardStatistic from "../components/Fragments/Dashboard/CardStatistic";
+import CardGoal from "../components/Fragments/Dashboard/CardGoal";
 
 const DashboardPage = () => {
   const tabs = ["All", "Revenue", "Expense"];
