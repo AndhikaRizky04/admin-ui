@@ -1,10 +1,10 @@
 import FormForgotPassword from "../components/Fragments/FormForgotPass";
 
 
-const ForgotPassword = () => {
+const ForgetPassword = () => {
   return (
     <FormForgotPassword/>
   )
 }
 
-export default ForgotPassword
+export default ForgetPassword;

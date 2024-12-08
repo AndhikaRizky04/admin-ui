@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignInPage from "./pages/signIn";
 import SignUpPage from "./pages/signUp";
 import ErrorRoute from "./pages/errorRoute";
-import ForgotPassword from "./pages/ForgotPassword";
+import ForgetPassword from "./pages/ForgetPassword";
 import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
 import ExpensePage from "./pages/expense";
@@ -28,7 +28,7 @@ const App = () => {
     },
     {
       path: "/forgot-password",
-      element: <ForgotPassword/>
+      element: <ForgetPassword/>
     },
     {
       path: "/balance",
